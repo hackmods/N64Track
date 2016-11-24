@@ -9,7 +9,7 @@ Given a few days times, a mobile XAML app was created to showcase the feature se
 
 ### What functionality has been included?
 
-**Featues:**
+**Features:**
 * Custom Font Rendering
 * SQLite
 * Custom Event Binding on Objects
