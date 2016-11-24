@@ -1,19 +1,37 @@
-# Build and Release Folders
+#ignore thumbnails created by windows
+#Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
 bin/
-bin-debug/
-bin-release/
-[Oo]bj/ # FlashDevelop obj
-[Bb]in/ # FlashDevelop bin
-
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+N64Track/obj/
+N64Track/N64Track.Droid/obj/
+N64Track/N64Track.iOS/obj/
+N64Track/N64Track.UWP/obj/
+N64Track/N64Track/bin/
+N64Track/N64Track.Droid/bin/
+N64Track/N64Track.iOS/bin/
+N64Track/N64Track.UWP/bin/
