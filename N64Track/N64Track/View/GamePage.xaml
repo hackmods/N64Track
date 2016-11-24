@@ -64,7 +64,7 @@
               </StackLayout>
               <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
                 <Label Text="URL" WidthRequest="80"  VerticalOptions="Center" />
-                <Label Text="{Binding URL}"  />
+                <Label x:Name="URLlink" Text="{Binding URL}" TextColor="{StaticResource ColourBlue}" />
               </StackLayout>
 
               <Button Text="Edit" Clicked="EditClicked" Style="{StaticResource GameListButton}" />

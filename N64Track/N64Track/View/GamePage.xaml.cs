@@ -19,7 +19,17 @@ namespace N64Track
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            Game game = (Game)this.BindingContext;
+           // Game game = (Game)this.BindingContext;
+
+            var urlTapGestureRecognizer = new TapGestureRecognizer();
+            urlTapGestureRecognizer.Tapped += (sender, e) => URLClicked();
+            URLlink.GestureRecognizers.Add(urlTapGestureRecognizer);
+        }
+
+        void URLClicked()
+        {
+           Game game = (Game)this.BindingContext;
+            Device.OpenUri(new Uri(game.URL));
         }
 
         void EditClicked(object sender, EventArgs e)
