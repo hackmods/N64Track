@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="N64Track.GameEditPage"             
+             Title="{Binding Name}"
+             BackgroundColor="{StaticResource ColourOrange}">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0"
+                Android="0, 0, 0, 0"
+                WinPhone="0, 0, 0, 0"/>
+  </ContentPage.Padding>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <ScrollView Grid.Row="0" x:Name="GameScrollView" Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ColourOrange}">
+        <StackLayout Orientation="Vertical"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" >
+          <StackLayout Orientation="Vertical" Style="{StaticResource GameListViewHeader}">
+            <Label Text="{Binding Name}"  Style="{StaticResource titleText}" />
+          </StackLayout>
+
+          <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="#FFF" Margin="20,5,20,5" Padding="15,10,15,10">
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Name" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtName" Text="{Binding Name}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Year" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtYear" Text="{Binding Year}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Developer" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtDeveloper" Text="{Binding Developer}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Publisher" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtPublisher" Text="{Binding Publisher}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Region" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtRegion" Text="{Binding Region}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Players" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtPlayers" Text="{Binding Players}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="ESRB" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtESRB" Text="{Binding ESRB}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="Genre" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="Genre" Text="{Binding Genre}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="{StaticResource T20W}">
+              <Label Text="URL" WidthRequest="80"  VerticalOptions="Center" />
+              <Entry x:Name="txtURL" Text="{Binding URL}" Style="{StaticResource editEntry}" />
+            </StackLayout>
+
+            <Button Text="Save" Clicked="SaveClicked" Style="{StaticResource GameListButton}" />
+            <Button Text="Cancel" Clicked="CancelClicked" Style="{StaticResource GameListButton}" />
+            <Button Text="Delete" Clicked="DeleteClicked" Style="{StaticResource GameListButton}" />
+          </StackLayout>
+        </StackLayout>
+
+      </ScrollView>
+      <StackLayout Grid.Row="1" Style="{StaticResource footerContainer}">
+        <Grid HorizontalOptions="CenterAndExpand">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+          </Grid.ColumnDefinitions>
+
+          <Button Grid.Column="0" Text="{StaticResource footerTextGames}" x:Name="ftrHome" Style="{StaticResource footerButton}" Clicked="FootNavGameClicked" />
+          <Button Grid.Column="1" Text="{StaticResource footerTextAbout}" x:Name="ftrCellar" Style="{StaticResource footerButton}" Clicked="FootNavAboutClicked" />
+
+        </Grid>
+      </StackLayout>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

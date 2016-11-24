@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:N64Track"
+             x:Class="N64Track.MainPage"
+             Title="Profile">
+
+    <ContentPage.Padding>
+      <OnPlatform x:TypeArguments="Thickness"
+                  iOS="0, 20, 0, 0"
+                  Android="0, 0, 0, 0"
+                  WinPhone="0, 0, 0, 0"/>
+    </ContentPage.Padding>
+    <ContentPage.Resources>
+      <ResourceDictionary>
+
+      </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+ 
+        <ListView x:Name="GameListView" Grid.Row="0" ItemSelected="GameSelected"  BackgroundColor="{StaticResource ColourOrange3}">
+          <ListView.Header>
+            <StackLayout Orientation="Vertical" Style="{StaticResource GameListViewHeader}" Margin="0,0,0,20">
+              <Label Text="N64 Games" Style="{StaticResource titleText}" />
+              <Button Text="Add Game" Clicked="AddGameClicked" Style="{StaticResource GameListButton}" />
+              <Button Text="Show All Games" x:Name="FilterText" Clicked="FilterClicked" Style="{StaticResource GameListButton}" />
+            </StackLayout>
+          </ListView.Header>
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <ViewCell.View>
+                  <StackLayout Orientation="Vertical" BackgroundColor="#FFF" VerticalOptions="CenterAndExpand" Margin="20,5,20,5" Padding="15,10,15,10">
+                    <StackLayout Orientation="Horizontal">
+                      <Label Text="{Binding Name}"  Style="{StaticResource GameTitleText}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                      <Label Text="{Binding Publisher}" Style="{StaticResource GameText}" />
+                      <Label Text="{Binding Genre}" Style="{StaticResource GameText}" HorizontalOptions="End" />
+                    </StackLayout>
+                   <!-- <Button Text="View Game" Style="{StaticResource GameListButton}" /> -->
+                   </StackLayout>
+                </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Grid.Row="1" Style="{StaticResource footerContainer}">
+          <Grid HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="{StaticResource footerTextGames}" x:Name="ftrHome" Style="{StaticResource footerButton}" Clicked="FootNavGameClicked" />
+            <Button Grid.Column="1" Text="{StaticResource footerTextAbout}" x:Name="ftrCellar" Style="{StaticResource footerButton}" Clicked="FootNavAboutClicked" />
+
+          </Grid>
+        </StackLayout>
+      </Grid>
+    </ContentPage.Content>
+  </ContentPage>
