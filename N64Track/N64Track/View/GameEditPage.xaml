@@ -23,7 +23,7 @@
         <RowDefinition Height="*" />
         <RowDefinition Height="Auto" />
       </Grid.RowDefinitions>
-      <ScrollView Grid.Row="0" x:Name="GameScrollView" Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ColourOrange}">
+      <ScrollView Grid.Row="0" x:Name="GameScrollView" Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ColourOrange3}">
         <StackLayout Orientation="Vertical"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" >
           <StackLayout Orientation="Vertical" Style="{StaticResource GameListViewHeader}">
             <Label Text="{Binding Name}"  Style="{StaticResource titleText}" />

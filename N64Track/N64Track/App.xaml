@@ -40,10 +40,10 @@
 
       <!-- Item Styling -->
       <Style x:Key="AboutImage" TargetType="Image">
-        <Setter Property="Source" Value="about.png"/>
+        <Setter Property="Source" Value="ryanmorris.png"/>
         <Setter Property="HeightRequest" Value="400"/>
         <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-        <Setter Property="Aspect" Value="AspectFit"/>
+       
         <Setter Property="VerticalOptions" Value="Center"/>
       </Style>
 

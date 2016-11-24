@@ -26,10 +26,14 @@
  
         <ListView x:Name="GameListView" Grid.Row="0" ItemSelected="GameSelected"  BackgroundColor="{StaticResource ColourOrange3}">
           <ListView.Header>
-            <StackLayout Orientation="Vertical" Style="{StaticResource GameListViewHeader}" Margin="0,0,0,20">
-              <Label Text="N64 Games" Style="{StaticResource titleText}" />
-              <Button Text="Add Game" Clicked="AddGameClicked" Style="{StaticResource GameListButton}" />
-              <Button Text="Show All Games" x:Name="FilterText" Clicked="FilterClicked" Style="{StaticResource GameListButton}" />
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Vertical" Style="{StaticResource GameListViewHeader}" Margin="0,0,0,10">
+                <Label Text="N64Track" Style="{StaticResource titleText}" />
+              </StackLayout>
+              <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                <Button Text="Add Game" Clicked="AddGameClicked" Style="{StaticResource GameListButton}" />
+                <Button Text="Show All Games" x:Name="FilterText" Clicked="FilterClicked" Style="{StaticResource GameListButton}" />
+              </StackLayout>
             </StackLayout>
           </ListView.Header>
           <ListView.ItemTemplate>
