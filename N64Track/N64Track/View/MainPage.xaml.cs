@@ -63,17 +63,15 @@ namespace N64Track
         {
             string filter = FilterText.Text;
 
-            if(filter == "Show All Games")
+            if (filter == "Show All Games")
             {
-                FilterList = GVM.Games.ToList();
-             //   var filtered = FilterList.Any(o => o.Publisher == "Nintendo");
-          //      GameListView.ItemsSource = filtered();
+                FilterList = GVM.Games.Where(o => o.Publisher == "Nintendo" || o.Publisher.Contains("Nintendo") || o.Developer.Contains("Nintendo")).ToList();
+                GameListView.ItemsSource = FilterList;
                 FilterText.Text = "Show Nintendo Games";
             }
             else if (filter == "Show Nintendo Games")
             {
-                FilterList = GVM.Games.ToList();
-                // var filtered = FilterList.Where(o => o.wineType == PkrType.Items[PkrType.SelectedIndex]).ToList();
+                FilterList = GVM.Games.Where (o => o.Genre == "Adventure" || o.Genre.Contains("Action")).ToList();
                 GameListView.ItemsSource = FilterList;
                 FilterText.Text = "Show Action Games";
             }

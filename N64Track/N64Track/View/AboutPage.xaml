@@ -32,6 +32,7 @@
           <Label Text="Library Configuration" Style="{StaticResource titleBlkText}"/>
           <Button Text="Load Local JSON JAP Games" Clicked="JsonJapClicked" Style="{StaticResource GameListButton}"/>
           <Button Text="Load Web API JSON PAL Games" Clicked="JsonPalClicked" Style="{StaticResource GameListButton}"/>
+            <Button Text="Insert DB Starting Games" Clicked="DBStartClicked" Style="{StaticResource GameListButton}"/>
           <Button Text="Insert DB ALL Games" Clicked="DBAllClicked" Style="{StaticResource GameListButton}"/>
           <Button Text="Delete DB Records" Clicked="ResetClicked" Style="{StaticResource GameListButton}"/>
           <Label Text="Made With Xamarin" Style="{StaticResource MagicText}" Margin="20,10,0,10" />

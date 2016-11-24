@@ -32,6 +32,12 @@ namespace N64Track
                 g.Generate(database);
         }
 
+        public void ReGenerate()
+        {
+            GenerateRecords g = new GenerateRecords();
+            g.Create(database);
+        }
+
         public void Reset()
         {
             lock (locker)

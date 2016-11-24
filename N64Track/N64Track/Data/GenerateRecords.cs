@@ -10,9 +10,25 @@ namespace N64Track
     class GenerateRecords
     {
         public void Create(SQLiteConnection database)
-        {
-            //Style
-            database.CreateTable<Game>();
+        {     
+           var i = database.Query<int>("SELECT count(*) FROM sqlite_master WHERE type = 'Game' AND name = 'Game'");   
+            if(i.Sum() < 1)
+                database.CreateTable<Game>();
+
+            var title228 = new Game { Name = "Mario Golf", Year = "1999", Developer = "Camelot", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Sports/Golf", URL = "https://en.wikipedia.org/wiki/Mario_Golf_(video_game)" };
+            var title229 = new Game { Name = "Mario Kart 64", Year = "1996", Developer = "Nintendo", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "K-A/3+", Genre = "Racing/Battle", URL = "https://en.wikipedia.org/wiki/Mario_Kart_64" };
+            var title231 = new Game { Name = "Mario Party", Year = "1998", Developer = "Hudson Soft", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Board Games", URL = "https://en.wikipedia.org/wiki/Mario_Party_(video_game)" };
+            var title232 = new Game { Name = "Mario Party 2", Year = "1999", Developer = "Hudson Soft", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Board Games", URL = "https://en.wikipedia.org/wiki/Mario_Party_2" };
+            var title233 = new Game { Name = "Mario Party 3", Year = "2000", Developer = "Hudson Soft", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Board Games", URL = "https://en.wikipedia.org/wiki/Mario_Party_3" };
+            var title234 = new Game { Name = "Mario Tennis", Year = "2000", Developer = "Camelot", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Sports/Tennis", URL = "https://en.wikipedia.org/wiki/Mario_Tennis" };
+            var title235 = new Game { Name = "Mario Tennis 64JP", Year = "", Developer = "", Publisher = "", Region = "", Players = "", ESRB = "", Genre = "", URL = "" };
+            database.Insert(title228);
+            database.Insert(title229);
+            database.Insert(title231);
+            database.Insert(title232);
+            database.Insert(title233);
+            database.Insert(title234);
+            database.Insert(title235);
 
             //Style
             var title390 = new Game { Name = "Star Wars: Episode I: Battle for Naboo", Year = "2000", Developer = "Factor 5", Publisher = "LucasArts", Region = "NA, PAL", Players = "1", ESRB = "T/11+", Genre = "Action/3D Shooter", URL = "https://en.wikipedia.org/wiki/Star_Wars:_Episode_I:_Battle_for_Naboo" };
@@ -208,13 +224,6 @@ namespace N64Track
             var title222 = new Game { Name = "Madden NFL 2002", Year = "2001", Developer = "Electronic Arts", Publisher = "Electronic Arts", Region = "NA", Players = "1–4", ESRB = "E/—", Genre = "Sports/Rugby/American Football", URL = "https://en.wikipedia.org/wiki/Madden_NFL_2002" };
             var title223 = new Game { Name = "Magical Tetris Challenge", Year = "1999", Developer = "Capcom", Publisher = "Capcom", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Arcade/Action/Puzzle", URL = "https://en.wikipedia.org/wiki/Magical_Tetris_Challenge" };
             var title227 = new Game { Name = "Major League Baseball Featuring Ken Griffey, Jr.", Year = "1998", Developer = "Angel Studios", Publisher = "Nintendo", Region = "NA, PALAUS", Players = "1–4", ESRB = "E/—", Genre = "Sports/Baseball", URL = "https://en.wikipedia.org/wiki/Major_League_Baseball_Featuring_Ken_Griffey,_Jr." };
-            var title228 = new Game { Name = "Mario Golf", Year = "1999", Developer = "Camelot", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Sports/Golf", URL = "https://en.wikipedia.org/wiki/Mario_Golf_(video_game)" };
-            var title229 = new Game { Name = "Mario Kart 64", Year = "1996", Developer = "Nintendo", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "K-A/3+", Genre = "Racing/Battle", URL = "https://en.wikipedia.org/wiki/Mario_Kart_64" };
-            var title231 = new Game { Name = "Mario Party", Year = "1998", Developer = "Hudson Soft", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Board Games", URL = "https://en.wikipedia.org/wiki/Mario_Party_(video_game)" };
-            var title232 = new Game { Name = "Mario Party 2", Year = "1999", Developer = "Hudson Soft", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Board Games", URL = "https://en.wikipedia.org/wiki/Mario_Party_2" };
-            var title233 = new Game { Name = "Mario Party 3", Year = "2000", Developer = "Hudson Soft", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Board Games", URL = "https://en.wikipedia.org/wiki/Mario_Party_3" };
-            var title234 = new Game { Name = "Mario Tennis", Year = "2000", Developer = "Camelot", Publisher = "Nintendo", Region = "JP, NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Sports/Tennis", URL = "https://en.wikipedia.org/wiki/Mario_Tennis" };
-            var title235 = new Game { Name = "Mario Tennis 64JP", Year = "", Developer = "", Publisher = "", Region = "", Players = "", ESRB = "", Genre = "", URL = "" };
             var title237 = new Game { Name = "Mega Man 64", Year = "2000", Developer = "Capcom", Publisher = "Capcom", Region = "JP, NA", Players = "1", ESRB = "E/—", Genre = "Action/Adventure", URL = "https://en.wikipedia.org/wiki/Mega_Man_Legends_(video_game)" };
             var title238 = new Game { Name = "Rockman Dash: Hagane no BokenshinJP", Year = "", Developer = "", Publisher = "", Region = "", Players = "", ESRB = "", Genre = "", URL = "" };
             var title239 = new Game { Name = "Michael Owen's WLS 2000", Year = "2000", Developer = "Silicon Dreams Studio", Publisher = "THQ", Region = "NA, PAL", Players = "1–4", ESRB = "E/3+", Genre = "Sports/Soccer", URL = "https://en.wikipedia.org/wiki/Michael_Owen%27s_WLS_2000" };
@@ -587,13 +596,7 @@ namespace N64Track
             database.Insert(title222);
             database.Insert(title223);
             database.Insert(title227);
-            database.Insert(title228);
-            database.Insert(title229);
-            database.Insert(title231);
-            database.Insert(title232);
-            database.Insert(title233);
-            database.Insert(title234);
-            database.Insert(title235);
+
             database.Insert(title237);
             database.Insert(title238);
             database.Insert(title239);

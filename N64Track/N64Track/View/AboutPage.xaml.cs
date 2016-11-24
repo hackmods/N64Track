@@ -43,6 +43,11 @@ namespace N64Track
             App.Database.Generate();
         }
 
+        void DBStartClicked(object sender, EventArgs args)
+        {
+            App.Database.ReGenerate();
+        }
+
         void ResetClicked(object sender, EventArgs args)
         {
             App.Database.Reset();

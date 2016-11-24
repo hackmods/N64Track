@@ -50,6 +50,10 @@ namespace N64Track.Data
                     gameString = response.Content.ReadAsStringAsync().Result;
                     
                 }
+                else //default to local style
+                {
+                    gameString = response.Content.ReadAsStringAsync().Result;
+                }
                 JsonTextReader reader = new JsonTextReader(new StringReader(gameString));
                 //var game = JsonConvert.DeserializeObject<Game>(reader.Value);
                 Game game = new Game();
