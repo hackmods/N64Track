@@ -28,6 +28,7 @@
           <StackLayout Orientation="Vertical" Style="{StaticResource GameListViewHeader}">
             <Label  Text="{StaticResource footerTextAbout}" Style="{StaticResource titleText}" />
         </StackLayout>
+          <ActivityIndicator x:Name="activityIndicator" IsRunning="False" IsVisible="False" Color="Blue"/>
           <StackLayout Orientation="Vertical"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="20,20,20,20">
           <Label Text="Library Configuration" Style="{StaticResource titleBlkText}"/>
           <Button Text="Load Local JSON JAP Games" Clicked="JsonJapClicked" Style="{StaticResource GameListButton}"/>

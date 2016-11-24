@@ -27,32 +27,55 @@ namespace N64Track
 
         void JsonJapClicked(object sender, EventArgs args)
         {
+            StartActivity();
             var item = (Button)sender;
             Data.JsonReaderN64 js = new Data.JsonReaderN64();
            js.getData("N64Track.Data.n64jap.json");
+            EndActivity();
         }
 
         void JsonPalClicked(object sender, EventArgs args)
         {
+            StartActivity();
             var item = (Button)sender;
             Data.JsonReaderN64 js = new Data.JsonReaderN64();
             js.getData("N64Track.Data.n64pal.json");
+            EndActivity();
         }
         void DBAllClicked(object sender, EventArgs args)
         {
+            StartActivity();
             App.Database.Generate();
+            EndActivity();
         }
 
         void DBStartClicked(object sender, EventArgs args)
         {
+            StartActivity();
             App.Database.ReGenerate();
+            EndActivity();
         }
 
         void ResetClicked(object sender, EventArgs args)
         {
+            StartActivity();
             App.Database.Reset();
+            EndActivity();
         }
         
+        void StartActivity()
+        {
+            this.GameScrollView.Opacity = 0.5;
+            activityIndicator.IsVisible = true;
+            activityIndicator.IsRunning = true;
+        }
+
+        void EndActivity()
+        {
+            activityIndicator.IsVisible = false;
+            activityIndicator.IsRunning = false;
+            this.GameScrollView.Opacity = 1;
+        }
 
         //footer methods
         async void FootNavGameClicked(object sender, EventArgs args)
