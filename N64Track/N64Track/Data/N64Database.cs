@@ -42,7 +42,7 @@ namespace N64Track
         {
             lock (locker)
             {
-                database.Execute(" DELETE FROM game");
+                database.Execute(" DELETE FROM game;");
             }
         }
 
@@ -87,7 +87,7 @@ namespace N64Track
         {
             lock (locker)
             {
-                return database.Query<Game>("SELECT DISTINCT [Genre] FROM game");
+                return database.Query<Game>("SELECT DISTINCT [Genre] FROM game;");
             }
         }
 
@@ -95,7 +95,7 @@ namespace N64Track
         {
             lock (locker)
             {
-                return database.Query<Game>("SELECT* FROM game WHERE[Genre] = '" + type + "'");
+                return database.Query<Game>("SELECT* FROM game WHERE[Genre] = '" + type + "';");
             }
         }
 

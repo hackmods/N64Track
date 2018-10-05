@@ -21,16 +21,6 @@ namespace N64Track.UWP
         public SQLite_UWP() { }
 
         #region ISQLite implementation
-        /*  public SQLite.SQLiteConnection GetConnection()
-          {
-              var sqliteFilename = "WineAwakening.db3";
-              string path = Path.Combine(ApplicationData.Current.LocalFolder.Path, sqliteFilename);
-
-              var conn = new SQLite.SQLiteConnection(path);
-
-              // Return the database connection 
-              return conn;
-          } */
 
         SQLiteConnection ISQLite.GetConnection()
         {
